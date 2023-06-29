@@ -33,9 +33,7 @@
       animation: floatUpDown 2s infinite ease-in-out;
       cursor: pointer;
     }
-    audio {
-        display: none;
-      }
+    
 
     @keyframes floatUpDown {
       0% {
@@ -51,6 +49,10 @@
   </style>
 </head>
 <body >
+  <audio autoplay>
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   <!-- Page 1: Gift Box -->
   <div id="gift-box" onclick="openGift()">
     <h1>Come on open your present Jellyfishhh!!!</h1>
@@ -58,10 +60,10 @@
   </div>
 
   <!-- Page 2: Unwrapping Animation -->
-  <div id="unwrapping" style="display: none;" >
+  <div id="unwrapping" style="display: none;" onclick="confirmHeadphones()" >
     <!-- Unwrapping animation content -->
     <!---<h2>Unwrapping your gift...</h2>--->
-    <img src="unwrapping-animation.png" alt="Unwrapping Animation" onclick="confirmHeadphones()">
+    <img src="unwrapping-animation.png" alt="Unwrapping Animation" >
     <!-- Button to proceed to the next page -->
     <h2>Now Feel the song See whats inside the Box...</h2>
   </div>
@@ -70,10 +72,7 @@
   <div id="music" style="display: none;">
     <!-- Music content -->
     <h2>Here is a special note to you..!</h2>
-    <audio controls autoplay>
-      <source src="song.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+    
     <!-- Long specially designed text note -->
     <iframe loading="eager" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;background-color:orange;"
       src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFnMwnvmK8&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
