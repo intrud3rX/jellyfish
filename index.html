@@ -49,10 +49,7 @@
   </style>
 </head>
 <body >
-  <audio autoplay>
-      <source src="song.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+  
   <!-- Page 1: Gift Box -->
   <div id="gift-box" onclick="openGift()">
     <h1>Come on open your present Jellyfishhh!!!</h1>
@@ -67,6 +64,10 @@
     <!-- Button to proceed to the next page -->
     <h2>Now Feel the song See whats inside the Box...</h2>
   </div>
+  <audio id="audio-player">
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
   <!-- Page 3: Playing Music -->
   <div id="music" style="display: none;">
@@ -85,6 +86,8 @@
     function openGift() {
       document.getElementById("gift-box").style.display = "none";
       document.getElementById("unwrapping").style.display = "block";
+      var audioPlayer = document.getElementById("audio-player");
+      audioPlayer.play();
     }
 
     // Function to confirm headphones and proceed to the next page
