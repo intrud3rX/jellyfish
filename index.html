@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gift Box Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        background-color: orange;
+        background-size: cover;
+        /*background-position: center;*/
+        background-repeat: no-repeat;
+        max-width:100%;
+        height:auto;
+        margin : 0;
+        padding : 0;
+      }
+    /* CSS for the gift box animation */
+    #gift-box {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      /*transform: translate(-60%, -60%);*/
+      animation: floatUpDown 2s infinite ease-in-out;
+      cursor: pointer;
+    }
+    #unwrapping
+    {
+        position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-30%, -30%);
+      animation: floatUpDown 2s infinite ease-in-out;
+      cursor: pointer;
+    }
+    audio {
+        display: none;
+      }
+
+    @keyframes floatUpDown {
+      0% {
+        transform: translate(-50%, -50%) translateY(-5px);
+      }
+      50% {
+        transform: translate(-50%, -50%) translateY(5px);
+      }
+      100% {
+        transform: translate(-50%, -50%) translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1: Gift Box -->
+  <div id="gift-box" onclick="openGift()">
+    <h1>Come on open your present Jellyfishhh!!!</h1>
+    <img src="gift-box-image.png" alt="Gift Box">
+  </div>
+
+  <!-- Page 2: Unwrapping Animation -->
+  <div id="unwrapping" style="display: none;" onclick="confirmHeadphones()">
+    <!-- Unwrapping animation content -->
+    <!---<h2>Unwrapping your gift...</h2>--->
+    <img src="unwrapping-animation.png" alt="Unwrapping Animation">
+    <!-- Button to proceed to the next page -->
+    <h2>Now Feel the song See whats inside the Box...</h2>
+  </div>
+
+  <!-- Page 3: Playing Music -->
+  <div id="music" style="display: none;">
+    <!-- Music content -->
+    <h2>Here is a special note to you..!</h2>
+    <audio controls autoplay>
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <!-- Long specially designed text note -->
+    <iframe loading="eager" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;background-color:orange;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFnMwnvmK8&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFnMwnvmK8&#x2F;view?utm_content=DAFnMwnvmK8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
+  </div>
+
+  <script>
+    // Function to open the gift box and proceed to the next page
+    function openGift() {
+      document.getElementById("gift-box").style.display = "none";
+      document.getElementById("unwrapping").style.display = "block";
+    }
+
+    // Function to confirm headphones and proceed to the next page
+    function confirmHeadphones() {
+      document.getElementById("unwrapping").style.display = "none";
+      document.getElementById("music").style.display = "block";
+    }
+  </script>
+</body>
+</html>
